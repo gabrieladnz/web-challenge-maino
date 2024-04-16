@@ -1,5 +1,5 @@
 
-# Pokedex Vue.js    <img src="https://i.pinimg.com/originals/12/66/04/126604ef41d65461caf308a63b2ad9b2.png" alt="Pokedex" width="55">
+# Pokedex Vue.js    <img src="https://i.pinimg.com/originals/12/66/04/126604ef41d65461caf308a63b2ad9b2.png" alt="Pokedex" width="40">
 
 ---
 
