@@ -1,5 +1,7 @@
 
-# Pokedex Vue.js    <img src="https://i.pinimg.com/originals/12/66/04/126604ef41d65461caf308a63b2ad9b2.png" alt="Pokedex" width="40">
+ <img src="https://i.pinimg.com/originals/12/66/04/126604ef41d65461caf308a63b2ad9b2.png" alt="Pokedex" width="45"> <img src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Pikachu-com-Fundo-Transparente-1024x919.png" alt="Pokedex" width="65"> <img src="https://i1.wp.com/www.multarte.com.br/wp-content/uploads/2019/03/001bulbasaur_pokemon_mystery_dungeon_explorers_of_sky.png?fit=696%2C661&ssl=1" alt="Pokedex" width="50">
+
+# Pokedex Vue.js   
 
 ---
 
