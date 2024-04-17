@@ -28,6 +28,7 @@
             </main>
           </div>
         </section>
+        <!-- Footer  -->
         <Footer></Footer>
       </div>
     </div>
