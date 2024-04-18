@@ -1,0 +1,14 @@
+.card-pokemon {
+    &__numero {}
+
+    &__nome {}
+
+    &__conteudo-card {
+        &__tipos {}
+
+        &__imagem {
+            width: 156px;
+            height: 144px;
+        }
+    }
+}
