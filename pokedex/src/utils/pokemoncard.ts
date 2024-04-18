@@ -1,5 +1,4 @@
 import { defineComponent } from 'vue';
-import ApiService from "@/api/ApiService";
 
 export default defineComponent({
     name: 'PokemonCard',

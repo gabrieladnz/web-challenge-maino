@@ -23,7 +23,7 @@
   
             </aside>
             <!-- Cards  -->
-            <main class="home__section-cards">
+            <main class="home__section__cards">
               <div v-for="(pokemon, index) in DetalhesPokemon" :key="index">
                 <PokemonCard :name="pokemon.name" :url="pokemon.forms[0].url" :id="pokemon.id" :types="pokemon.types" :photo="pokemon.sprites.other['official-artwork'].front_default"></PokemonCard>
               </div>

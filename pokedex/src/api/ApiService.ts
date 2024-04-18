@@ -16,6 +16,7 @@ class ApiService {
   public getDetalhesPokemon = async (nomePokemon: string): Promise<any> => {
     try {
       const response: AxiosResponse<any> = await axios.get(`${this.apiURL}pokemon/${nomePokemon}`);
+      console.log("aaaaaaaaa", response.data)
       return response.data;
     } catch (error) {
       throw new Error(`Erro ao buscar detalhes do Pokémon ${nomePokemon} : ${error}`);

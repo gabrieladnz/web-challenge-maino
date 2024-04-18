@@ -1,26 +1,29 @@
 .home {
   background: #FFFFFF;
-  ;
+
   &__titulo {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__section {
 
-    &__barra-pesquisa {
+    &__barra-pesquisa {}
 
-    }
+    &__conteudo-principal {}
 
-    &__conteudo-principal {
-      
-    }
+    &__menu-lateral {}
 
-    &__menu-lateral {
-
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
     }
   }
 
-  &__footer {
-
-  }
+  &__footer {}
 }

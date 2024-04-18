@@ -4,7 +4,9 @@
     &__nome {}
 
     &__conteudo-card {
-        &__tipos {}
+        &__tipos {
+            list-style-type: none;
+        }
 
         &__imagem {
             width: 156px;
