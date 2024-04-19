@@ -16,7 +16,7 @@ export default defineComponent({
         return {
             ListaPokemon: [] as Pokemon[],
             PokemonsFiltrados: [] as Pokemon[],
-            DetalhesPokemon: [] as any[]
+            DetalhesPokemon: [] as any[],
         };
     },
     async created() {

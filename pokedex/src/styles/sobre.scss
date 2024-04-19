@@ -1,0 +1,43 @@
+.sobre {
+    &__section {
+        margin-top: 50px;
+
+        &__titulo {
+            color: black;
+            font-size: 40px;
+        }
+
+        &__texto {
+            display: flex;
+            text-align: justify;
+            flex-wrap: nowrap;
+            color: gray;
+            padding: 2em;
+            gap: 20px;
+
+            p {
+                font-size: medium;
+                border: 2px solid #fff;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.456);
+                padding: 15px;
+                background-color: #fff;
+            }
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column
+            }
+        }
+
+        &__subtitulo {
+            margin-top: 30px;
+            color: black;
+        }
+
+        &__links {
+            img {
+                width: 50px;
+            }
+        }
+    }
+}

@@ -6,7 +6,7 @@ class ApiService {
   
   public getListaPokemon = async (): Promise<Pokemon[]> => {
     try {
-      const response: AxiosResponse<{ results: Pokemon[] }> = await axios.get(`${this.apiURL}pokemon?limit=10`);
+      const response: AxiosResponse<{ results: Pokemon[] }> = await axios.get(`${this.apiURL}pokemon?limit=50`);
       return response.data.results;
     } catch (error) {
       throw new Error(`Erro ao buscar lista de Pokémon: ${error}`);
@@ -16,7 +16,7 @@ class ApiService {
   public getDetalhesPokemon = async (nomePokemon: string): Promise<any> => {
     try {
       const response: AxiosResponse<any> = await axios.get(`${this.apiURL}pokemon/${nomePokemon}`);
-      console.log("aaaaaaaaa", response.data)
+      console.log("Retorno", response.data)
       return response.data;
     } catch (error) {
       throw new Error(`Erro ao buscar detalhes do Pokémon ${nomePokemon} : ${error}`);
