@@ -18,9 +18,14 @@
             <img src="../assets/icons/lupa.svg" alt="Ícone de busca">
           </div>
           <!-- Conteúdo principal  -->
-          <div class="home__section-conteudo-principal">
+          <div class="home__section__conteudo-principal">
             <aside class="home__section-menu-lateral">
-  
+              <div>
+                <button>Tipo</button>
+              </div>
+              <div>
+                <button>Espécie</button>
+              </div>
             </aside>
             <!-- Cards  -->
             <main class="home__section__cards">
