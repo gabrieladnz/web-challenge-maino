@@ -29,7 +29,6 @@
         align-items: flex-end;
         flex-direction: row-reverse;
 
-
         &__tipos {
             list-style-type: none;
 
@@ -101,6 +100,11 @@
     }
 }
 
-.fadeIn {
-    animation: fadeIn 1s both;
+.card {
+    transition: transform 0.3s ease;
+    border: none !important;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
 }

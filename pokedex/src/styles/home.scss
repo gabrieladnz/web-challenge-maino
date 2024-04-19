@@ -10,13 +10,20 @@
 
     h1 {
       font-size: 50px;
+      font-family: math;
     }
   }
 
   &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &__barra-pesquisa {
       margin-top: 20px;
+      border-radius: 10px;
+      border: 2px solid #e2a50b;
+      width: 80%;
       
       img {
         width: 28px;
@@ -24,15 +31,23 @@
       }
 
       input {
-        border-radius: 20px;
-        border: 2px solid #e2a50b;
+        border: none;
         padding: 0.3em;
-        width: 80%;
+        width: 90%;
+      }
+
+      input:focus {
+        outline: none;
       }
     }
 
     &__conteudo-principal {
       display: flex;
+      width: 80%;
+
+      @media screen and (max-width: 375px) {
+        flex-direction: column;
+      }
     }
 
     &__menu-lateral {}
@@ -44,8 +59,11 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      row-gap: 10px;
     }
   }
 
   &__footer {}
 }
+
+

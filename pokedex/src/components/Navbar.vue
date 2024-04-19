@@ -57,4 +57,16 @@ export default {
 #navbar a.router-link-exact-active {
   outline: none;
 }
+
+#idiomas {
+
+  img {
+    transition: transform 0.3s ease;
+    border: none !important;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+  }
+}
 </style>
