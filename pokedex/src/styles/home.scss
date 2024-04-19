@@ -1,26 +1,101 @@
 .home {
   background: #FFFFFF;
-  ;
+
   &__titulo {
+    margin-top: 30px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #141414;
+
+    h1 {
+      font-size: 50px;
+      font-family: math;
+    }
+
+    &.desce {
+      animation: surgir 2s ease forwards;
+    }
   }
 
   &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &__barra-pesquisa {
+      margin-top: 20px;
+      border-radius: 10px;
+      border: 2px solid #e2a50b;
+      width: 80%;
+      
+      img {
+        width: 28px;
+        cursor: pointer;
+      }
 
+      input {
+        border: none;
+        padding: 0.3em;
+        width: 90%;
+      }
+
+      input:focus {
+        outline: none;
+      }
     }
 
     &__conteudo-principal {
-      
+      display: flex;
+      width: 80%;
+
+      @media screen and (max-width: 425px) {
+        flex-direction: column;
+      }
     }
 
     &__menu-lateral {
+      margin-top: 20px;
+      
+      div {
+        margin-bottom: 10px;
+      }
+      
+      button {
+        border-radius: 7px;
+        font-size: large;
+        border: 1.9px solid rgb(54, 146, 238);
+        padding-left: 0.5em;
+        padding-right: 1em;
+        width: 100%;
 
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+
+    &__cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 10px;
+      
+      overflow-y: scroll;
     }
   }
 
-  &__footer {
+  &__footer {}
+}
 
+
+// Animações 
+@keyframes surgir {
+  from {
+    transform: translateX(-5%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

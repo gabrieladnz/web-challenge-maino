@@ -1,0 +1,111 @@
+.card-pokemon {
+    margin: .5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+
+    &__numero {
+        display: flex;
+        justify-content: flex-end;
+        color: rgb(184, 182, 182);
+    }
+
+    &__nome {
+        display: flex;
+        justify-content: flex-start;
+        color: #000000;
+        font-family: system-ui;
+        font-weight: 400;
+        font-size: 30px;
+    }
+
+    &__conteudo-card {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row-reverse;
+
+        &__tipos {
+            list-style-type: none;
+
+            li {
+                text-align: center;
+                border-radius: 1rem;
+                font-size: .8rem;
+                padding: .25rem 1rem;
+                margin: .25rem 0;
+                text-align: left;
+                text-transform: capitalize;
+                color: #141414;
+                font-weight: 500;
+            }
+        }
+
+        &__imagem {
+            width: 156px;
+            height: 144px;
+        }
+    }
+}
+
+// Animações 
+.slideInDown {
+    animation: slideInDown 1s linear;
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-20%);
+        visibility: visible;
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.slideInLeft {
+    animation: slideInLeft 1s both;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-10%);
+        visibility: visible;
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.slideInRight {
+    animation: slideInRight 1s both;
+}
+
+@keyframes slideInRight {
+    0% {
+        -webkit-transform: translateX(10%);
+        transform: translateX(10%);
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+.card {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: none !important;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
