@@ -1,49 +1,68 @@
 <!-- Template  -->
 <template>
-    <div class="home">
-        <!-- Navbar  -->
-      <div>
-        <Navbar></Navbar>
-      </div>
-      <div>
-        <!-- Título  -->
-        <div class="home__titulo desce">
-          <h1>Pokédex</h1>
-          <img src="../assets/logo.png" alt="Logo">
-        </div>
-        <section class="home__section">
-          <!-- Barra de pesquisa  -->
-          <div class="home__section__barra-pesquisa">
-            <input type="text">
-            <img src="../assets/icons/lupa.svg" alt="Ícone de busca">
-          </div>
-          <!-- Conteúdo principal  -->
-          <div class="home__section__conteudo-principal">
-            <aside class="home__section__menu-lateral">
-              <div>
-                <button>{{ $t("filtro.tipo") }}</button>
-              </div>
-              <div>
-                <button>{{ $t("filtro.especie") }}</button>
-              </div>
-              <div>
-                <button style="background-color: #fbbb13; margin-top: 30px; border: none; border-radius: 2px; display: flex;
-    justify-content: center;">{{ $t("filtro.pesquisa") }}</button>
-              </div>
-            </aside>
-            <!-- Cards  -->
-            <main class="home__section__cards" ref="lista" @scroll="handleScroll" v-infinite-scroll="handleScroll">
-              <div v-for="(pokemon, index) in DetalhesPokemon" :key="index">
-                <PokemonCard :name="pokemon.name" :url="pokemon.forms[0].url" :id="pokemon.id" :types="pokemon.types" :photo="pokemon.sprites.other['official-artwork'].front_default"></PokemonCard>
-              </div>
-            </main>
-          </div>
-        </section>
-        <!-- Footer  -->
-        <Footer></Footer>
-      </div>
+  <div class="home">
+    <!-- Navbar  -->
+    <div>
+      <Navbar></Navbar>
     </div>
-  </template>
+    <div>
+      <!-- Título  -->
+      <div class="home__titulo desce">
+        <h1>Pokédex</h1>
+        <img src="../assets/logo.png" alt="Logo">
+      </div>
+      <section class="home__section">
+        <!-- Barra de pesquisa  -->
+        <div class="home__section__barra-pesquisa">
+          <input type="text" v-model="termoProcurado" @input="filtrarPokemon">
+          <img src="../assets/icons/lupa.svg" alt="Ícone de busca" @click="filtrarPokemon()">
+        </div>
+        <!-- Conteúdo principal  -->
+        <div class="home__section__conteudo-principal">
+          <!-- Menu lateral  -->
+          <aside class="home__section__menu-lateral">
+            <div>
+              <label>{{ $t("filtro.tipo") }}</label>
+              <select v-model="tipoSelecionado">
+                <option value="todos">Todos</option>
+                <template v-for="pokemon in DetalhesPokemon">
+                  <template v-if="pokemon.types">
+                    <option v-for="(typeData, typeIndex) in pokemon.types" :key="`${pokemon.id}_${typeIndex}`"
+                      :value="typeData.type.name">
+                      {{ typeData.type.name }}
+                    </option>
+                  </template>
+                </template>
+              </select>
+            </div>
+            <div>
+              <label>{{ $t("filtro.especie") }}</label>
+              <select v-model="especieSelecionada">
+                <option v-for="pokemon in DetalhesPokemon" :key="pokemon.id" :value="pokemon.name">{{ pokemon.name }}
+                </option>
+              </select>
+            </div>
+            <div>
+              <button @click="pesquisar()"
+                style="background-color: #fbbb13; margin-top: 30px; border: none; border-radius: 2px; display: flex; justify-content: center;">{{
+                  $t("filtro.pesquisa") }}</button>
+            </div>
+          </aside>
+          <!-- Cards  -->
+          <main class="home__section__cards" v-infinite-scroll="handleScroll">
+            <div v-for="(pokemon, index) in PokemonsFiltrados.length > 0 ? PokemonsFiltrados : DetalhesPokemon"
+              :key="index">
+              <PokemonCard :name="pokemon.name" :url="pokemon.forms[0].url" :id="pokemon.id" :types="pokemon.types"
+                :photo="pokemon.sprites.other['official-artwork'].front_default"></PokemonCard>
+            </div>
+          </main>
+        </div>
+      </section>
+      <!-- Footer  -->
+      <Footer></Footer>
+    </div>
+  </div>
+</template>
 
 
 <!-- Script  -->
