@@ -12,6 +12,10 @@
       font-size: 50px;
       font-family: math;
     }
+
+    &.desce {
+      animation: surgir 2s ease forwards;
+    }
   }
 
   &__section {
@@ -45,21 +49,38 @@
       display: flex;
       width: 80%;
 
-      @media screen and (max-width: 375px) {
+      @media screen and (max-width: 425px) {
         flex-direction: column;
       }
     }
 
-    &__menu-lateral {}
+    &__menu-lateral {
+      margin-top: 20px;
+      
+      div {
+        margin-bottom: 10px;
+      }
+      
+      button {
+        border-radius: 7px;
+        font-size: large;
+        border: 1.9px solid rgb(54, 146, 238);
+        padding-left: 0.5em;
+        padding-right: 1em;
+        width: 100%;
+
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
 
     &__cards {
-      // display: grid;
-      // grid-template-columns: repeat(3, 1fr);
-
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       row-gap: 10px;
+      
+      overflow-y: scroll;
     }
   }
 
@@ -67,3 +88,14 @@
 }
 
 
+// Animações 
+@keyframes surgir {
+  from {
+    transform: translateX(-5%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

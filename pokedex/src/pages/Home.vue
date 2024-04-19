@@ -7,7 +7,7 @@
       </div>
       <div>
         <!-- Título  -->
-        <div class="home__titulo">
+        <div class="home__titulo desce">
           <h1>Pokédex</h1>
           <img src="../assets/logo.png" alt="Logo">
         </div>
@@ -19,16 +19,20 @@
           </div>
           <!-- Conteúdo principal  -->
           <div class="home__section__conteudo-principal">
-            <aside class="home__section-menu-lateral">
+            <aside class="home__section__menu-lateral">
               <div>
                 <button>{{ $t("filtro.tipo") }}</button>
               </div>
               <div>
                 <button>{{ $t("filtro.especie") }}</button>
               </div>
+              <div>
+                <button style="background-color: #fbbb13; margin-top: 30px; border: none; border-radius: 2px; display: flex;
+    justify-content: center;">{{ $t("filtro.pesquisa") }}</button>
+              </div>
             </aside>
             <!-- Cards  -->
-            <main class="home__section__cards" v-infinite-scroll="loadMore">
+            <main class="home__section__cards" ref="lista" @scroll="handleScroll" v-infinite-scroll="handleScroll">
               <div v-for="(pokemon, index) in DetalhesPokemon" :key="index">
                 <PokemonCard :name="pokemon.name" :url="pokemon.forms[0].url" :id="pokemon.id" :types="pokemon.types" :photo="pokemon.sprites.other['official-artwork'].front_default"></PokemonCard>
               </div>
