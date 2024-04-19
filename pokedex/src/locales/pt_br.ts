@@ -10,7 +10,8 @@ export const pt_br = {
 
     },
     filtro: {
-
+        tipo: 'Tipo',
+        especie: 'Espécies'
     },
     card: {
 

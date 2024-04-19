@@ -10,7 +10,8 @@ export const en = {
 
     },
     filtro: {
-
+        tipo: 'Type',
+        especie: 'Species'
     },
     card: {
 

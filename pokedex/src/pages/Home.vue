@@ -21,10 +21,10 @@
           <div class="home__section__conteudo-principal">
             <aside class="home__section-menu-lateral">
               <div>
-                <button>Tipo</button>
+                <button>{{ $t("filtro.tipo") }}</button>
               </div>
               <div>
-                <button>Espécie</button>
+                <button>{{ $t("filtro.especie") }}</button>
               </div>
             </aside>
             <!-- Cards  -->
