@@ -17,6 +17,7 @@ export default defineComponent({
             ListaPokemon: [] as Pokemon[],
             PokemonsFiltrados: [] as Pokemon[],
             DetalhesPokemon: [] as any[],
+            termoProcurado: '',
         };
     },
     async created() {
@@ -29,6 +30,9 @@ export default defineComponent({
         }
     },
     methods: {
+        /**
+         * Busca os detalhes do pokémon em específico através do seu nome.
+         */
         async buscarDetalhesPokemon() {
             try {
                 const apiService = new ApiService();
@@ -39,7 +43,17 @@ export default defineComponent({
             } catch (error) {
                 console.error('Erro ao buscar detalhes dos Pokémon:', error);
             }
+        },
+        /**
+         * Filtra os Pokémons através de dados como: nome, espécie e id e exibe na tela.
+         */
+        filtrarPokemon() {
+            this.PokemonsFiltrados = this.DetalhesPokemon.filter(pokemon => {
+                return (
+                    pokemon.name.toLowerCase().includes(this.termoProcurado.toLowerCase()) || pokemon.id.toString().includes(this.termoProcurado) || pokemon.types.some((type: any) => type.type.name.toLowerCase().includes(this.termoProcurado.toLowerCase()))
+                );
+            })
         }
-        
+
     }
 });

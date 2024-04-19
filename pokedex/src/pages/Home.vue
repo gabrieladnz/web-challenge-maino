@@ -1,49 +1,51 @@
 <!-- Template  -->
 <template>
-    <div class="home">
-        <!-- Navbar  -->
-      <div>
-        <Navbar></Navbar>
-      </div>
-      <div>
-        <!-- Título  -->
-        <div class="home__titulo desce">
-          <h1>Pokédex</h1>
-          <img src="../assets/logo.png" alt="Logo">
-        </div>
-        <section class="home__section">
-          <!-- Barra de pesquisa  -->
-          <div class="home__section__barra-pesquisa">
-            <input type="text">
-            <img src="../assets/icons/lupa.svg" alt="Ícone de busca">
-          </div>
-          <!-- Conteúdo principal  -->
-          <div class="home__section__conteudo-principal">
-            <aside class="home__section__menu-lateral">
-              <div>
-                <button>{{ $t("filtro.tipo") }}</button>
-              </div>
-              <div>
-                <button>{{ $t("filtro.especie") }}</button>
-              </div>
-              <div>
-                <button style="background-color: #fbbb13; margin-top: 30px; border: none; border-radius: 2px; display: flex;
-    justify-content: center;">{{ $t("filtro.pesquisa") }}</button>
-              </div>
-            </aside>
-            <!-- Cards  -->
-            <main class="home__section__cards" ref="lista" @scroll="handleScroll" v-infinite-scroll="handleScroll">
-              <div v-for="(pokemon, index) in DetalhesPokemon" :key="index">
-                <PokemonCard :name="pokemon.name" :url="pokemon.forms[0].url" :id="pokemon.id" :types="pokemon.types" :photo="pokemon.sprites.other['official-artwork'].front_default"></PokemonCard>
-              </div>
-            </main>
-          </div>
-        </section>
-        <!-- Footer  -->
-        <Footer></Footer>
-      </div>
+  <div class="home">
+    <!-- Navbar  -->
+    <div>
+      <Navbar></Navbar>
     </div>
-  </template>
+    <div>
+      <!-- Título  -->
+      <div class="home__titulo desce">
+        <h1>Pokédex</h1>
+        <img src="../assets/logo.png" alt="Logo">
+      </div>
+      <section class="home__section">
+        <!-- Barra de pesquisa  -->
+        <div class="home__section__barra-pesquisa">
+          <input type="text" v-model="termoProcurado" @input="filtrarPokemon">
+          <img src="../assets/icons/lupa.svg" alt="Ícone de busca" @click="filtrarPokemon()">
+        </div>
+        <!-- Conteúdo principal  -->
+        <div class="home__section__conteudo-principal">
+          <aside class="home__section__menu-lateral">
+            <div>
+              <button>{{ $t("filtro.tipo") }}</button>
+            </div>
+            <div>
+              <button>{{ $t("filtro.especie") }}</button>
+            </div>
+            <div>
+              <button style="background-color: #fbbb13; margin-top: 30px; border: none; border-radius: 2px; display: flex;
+    justify-content: center;">{{ $t("filtro.pesquisa") }}</button>
+            </div>
+          </aside>
+          <!-- Cards  -->
+          <main class="home__section__cards" ref="lista" @scroll="handleScroll" v-infinite-scroll="handleScroll">
+            <div v-for="(pokemon, index) in PokemonsFiltrados.length > 0 ? PokemonsFiltrados : DetalhesPokemon"
+              :key="index">
+              <PokemonCard :name="pokemon.name" :url="pokemon.forms[0].url" :id="pokemon.id" :types="pokemon.types"
+                :photo="pokemon.sprites.other['official-artwork'].front_default"></PokemonCard>
+            </div>
+          </main>
+        </div>
+      </section>
+      <!-- Footer  -->
+      <Footer></Footer>
+    </div>
+  </div>
+</template>
 
 
 <!-- Script  -->
