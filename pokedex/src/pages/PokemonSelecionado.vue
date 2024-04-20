@@ -21,12 +21,12 @@
         <h1>{{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}</h1>
         <!-- Sprites  -->
         <div v-if="pokemon.sprites" class="pokemon-selecionado__painel-principal__secao-2__sprites">
-          <h4>Sprites</h4>
+          <h4>{{ $t('card.sprites') }}</h4>
           <img v-for="(sprite, key) in pokemon.sprites" :key="key" :src="sprite" :alt="key" />
         </div>
         <!-- Evoluções  -->
         <div v-if="pokemon.evolutions" class="pokemon-selecionado__painel-principal__secao-2__evolucoes">
-          <h4>Evoluções</h4>
+          <h4>{{ $t('card.evolucoes') }}</h4>
           <ul>
             <li v-for="evolution in pokemon.evolutions" :key="evolution">
               {{ evolution }}
@@ -39,7 +39,7 @@
     <section class="pokemon-selecionado__painel-secundario">
       <!-- Ataque  -->
       <div v-if="pokemon.moves" style="width: 40%;" class="tabela">
-        <h4>Movimentos de Ataque</h4>
+        <h4>{{ $t('card.ataque') }}</h4>
         <div class="list-group">
           <a href="#" class="list-group-item" v-for="move in pokemon.moves" :key="move.move.name">
             {{ move.move.name }}
@@ -48,7 +48,7 @@
       </div>
       <!-- Games  -->
       <div v-if="pokemon.game_indices" style="width: 40%;" class="tabela">
-        <h4>Games</h4>
+        <h4>{{ $t('card.game') }}</h4>
         <div class="list-group">
           <a href="#" class="list-group-item" v-for="gameIndex in pokemon.game_indices" :key="gameIndex.version.name">
             {{ gameIndex.version.name }}

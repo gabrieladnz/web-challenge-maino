@@ -19,7 +19,10 @@ export const pt_br = {
     },
 
     card: {
-
+        sprites: 'Sprites',
+        evolucoes: 'Evoluções',
+        ataque: 'Movimentos de ataque',
+        game: 'Jogo'
     },
     sobre: {
         titulo: 'Sobre',

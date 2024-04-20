@@ -16,7 +16,10 @@ export const en = {
         placeholder: 'Enter an id, name, species or types to search for Pokémon...'
     },
     card: {
-
+        sprites: 'Sprite',
+        evolucoes: 'Evolutions',
+        ataque: 'Attack moves',
+        game: 'Game'
     },
 
     sobre: {
