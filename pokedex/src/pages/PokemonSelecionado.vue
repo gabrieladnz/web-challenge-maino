@@ -4,27 +4,29 @@
     <div>
       <Navbar></Navbar>
     </div>
-    <section>
-      <!-- Imagem  -->
-      <div>
-        <img v-bind:src="pokemon.foto" alt="Imagem do Pokemon" />
+    <section class="pokemon-selecionado__painel-principal">
+      <div class="pokemon-selecionado__painel-principal__secao-1">
+        <!-- Imagem  -->
+        <div class="pokemon-selecionado__painel-principal__secao-1__imagem">
+          <img v-bind:src="pokemon.foto" alt="Imagem do Pokemon" />
+        </div>
+        <div class="pokemon-selecionado__painel-principal__secao-1__poderes">
+          <ol class="pokemon-selecionado__painel-principal__secao-1__poderes__tipos">
+            <li v-for="(type, index) in pokemon.types" :key="index"
+              :style="{ backgroundColor: getBackgroundColor(type) }">{{ type }}</li>
+          </ol>
+        </div>
       </div>
-      <div>
-        <ol>
-          <li v-for="(type, index) in pokemon.types" :key="index"
-            :style="{ backgroundColor: getBackgroundColor(type) }">{{ type }}</li>
-        </ol>
-      </div>
-      <!-- Sprites  -->
-      <div>
-        <h1>{{ pokemon.name }}</h1>
-        <div v-if="pokemon.sprites">
-          <h2>Sprites</h2>
+      <div class="pokemon-selecionado__painel-principal__secao-2">
+        <h1>{{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}</h1>
+        <!-- Sprites  -->
+        <div v-if="pokemon.sprites" class="pokemon-selecionado__painel-principal__secao-2__sprites">
+          <h4>Sprites</h4>
           <img v-for="(sprite, key) in pokemon.sprites" :key="key" :src="sprite" :alt="key" />
         </div>
         <!-- Evoluções  -->
-        <div v-if="pokemon.evolutions">
-          <h2>Evoluções</h2>
+        <div v-if="pokemon.evolutions" class="pokemon-selecionado__painel-principal__secao-2__evolucoes">
+          <h4>Evoluções</h4>
           <ul>
             <li v-for="evolution in pokemon.evolutions" :key="evolution">
               {{ evolution }}
@@ -34,24 +36,24 @@
       </div>
     </section>
 
-    <section>
+    <section class="pokemon-selecionado__painel-secundario">
       <!-- Ataque  -->
-      <div v-if="pokemon.moves">
-        <h2>Movimentos de Ataque</h2>
-        <ul>
-          <li v-for="move in pokemon.moves" :key="move.move.name">
+      <div v-if="pokemon.moves" style="width: 40%;" class="tabela">
+        <h4>Movimentos de Ataque</h4>
+        <div class="list-group">
+          <a href="#" class="list-group-item" v-for="move in pokemon.moves" :key="move.move.name">
             {{ move.move.name }}
-          </li>
-        </ul>
+          </a>
+        </div>
       </div>
       <!-- Games  -->
-      <div v-if="pokemon.game_indices">
-        <h2>Games</h2>
-        <ul>
-          <li v-for="gameIndex in pokemon.game_indices" :key="gameIndex.version.name">
+      <div v-if="pokemon.game_indices" style="width: 40%;" class="tabela">
+        <h4>Games</h4>
+        <div class="list-group">
+          <a href="#" class="list-group-item" v-for="gameIndex in pokemon.game_indices" :key="gameIndex.version.name">
             {{ gameIndex.version.name }}
-          </li>
-        </ul>
+          </a>
+        </div>
       </div>
     </section>
   </div>
