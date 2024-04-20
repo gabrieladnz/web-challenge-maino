@@ -12,7 +12,8 @@ export const es = {
     filtro: {
         tipo: 'Tipo',
         especie: 'Especies',
-        pesquisa: 'Buscar'
+        pesquisa: 'Buscar',
+        placeholder: 'Introduce un ID, nombre, especie o tipos para buscar Pokémon...'
     },
     card: {
 

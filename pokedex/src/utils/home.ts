@@ -19,7 +19,7 @@ export default defineComponent({
             DetalhesPokemon: [] as any[],
             termoProcurado: '',
             tipoSelecionado: '',
-            especieSelecionada: ''
+            especieSelecionada: '',
         };
     },
     async created() {

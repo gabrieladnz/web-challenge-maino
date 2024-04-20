@@ -14,7 +14,7 @@
       <section class="home__section">
         <!-- Barra de pesquisa  -->
         <div class="home__section__barra-pesquisa">
-          <input type="text" v-model="termoProcurado" @input="filtrarPokemon">
+          <input type="text" v-model="termoProcurado" @input="filtrarPokemon" :placeholder="$t('filtro.placeholder')">
           <img src="../assets/icons/lupa.svg" alt="Ícone de busca" @click="filtrarPokemon()">
         </div>
         <!-- Conteúdo principal  -->
@@ -42,10 +42,9 @@
                 </option>
               </select>
             </div>
-            <div>
-              <button @click="pesquisar()"
-                style="background-color: #fbbb13; margin-top: 30px; border: none; border-radius: 2px; display: flex; justify-content: center;">{{
-                  $t("filtro.pesquisa") }}</button>
+            <div style="display: flex; justify-content: center;">
+              <button @click="pesquisar()">{{
+                $t("filtro.pesquisa") }}</button>
             </div>
           </aside>
           <!-- Cards  -->

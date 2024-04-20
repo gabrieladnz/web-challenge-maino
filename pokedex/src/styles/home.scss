@@ -1,3 +1,7 @@
+* {
+  font-family: system-ui;
+}
+
 .home {
   background: #FFFFFF;
 
@@ -10,7 +14,6 @@
 
     h1 {
       font-size: 50px;
-      font-family: math;
     }
 
     &.desce {
@@ -26,9 +29,10 @@
     &__barra-pesquisa {
       margin-top: 20px;
       border-radius: 10px;
-      border: 2px solid #e2a50b;
+      border: 2px solid #060606;
+      // border: 2px solid #e2a50b;060606
       width: 80%;
-      
+
       img {
         width: 28px;
         cursor: pointer;
@@ -56,21 +60,39 @@
 
     &__menu-lateral {
       margin-top: 20px;
-      
+      color: #060606;
+
       div {
         margin-bottom: 10px;
       }
-      
+
       select {
         border-radius: 7px;
         font-size: large;
-        border: 1.9px solid rgb(54, 146, 238);
+        border: 1.9px solid rgb(0, 0, 0);
         padding-left: 0.5em;
-        padding-right: 1em;
+        padding-right: 0.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
         width: 100%;
-
+        color: gray;
         display: flex;
         justify-content: flex-start;
+        background-color: rgb(255, 255, 255);
+      }
+
+      button {
+        background-color: rgb(0 0 0);
+        margin-top: 30px;
+        border: none;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        color: white;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
       }
     }
 
@@ -79,8 +101,8 @@
       flex-wrap: wrap;
       justify-content: center;
       row-gap: 10px;
-      
-      overflow-y: scroll;
+
+      // overflow-y: scroll;
     }
   }
 
@@ -94,6 +116,7 @@
     transform: translateX(-5%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
