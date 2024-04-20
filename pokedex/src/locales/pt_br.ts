@@ -15,10 +15,14 @@ export const pt_br = {
         tipo: 'Tipo',
         especie: 'Espécies',
         pesquisa: 'Pesquisar',
+        placeholder: 'Digite um id, nome, espécie ou tipos para buscar Pokémons...'
     },
 
     card: {
-
+        sprites: 'Sprites',
+        evolucoes: 'Evoluções',
+        ataque: 'Movimentos de ataque',
+        game: 'Jogo'
     },
     sobre: {
         titulo: 'Sobre',

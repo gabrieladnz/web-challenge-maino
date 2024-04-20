@@ -19,7 +19,7 @@ export default defineComponent({
             DetalhesPokemon: [] as any[],
             termoProcurado: '',
             tipoSelecionado: '',
-            especieSelecionada: ''
+            especieSelecionada: '',
         };
     },
     async created() {
@@ -56,6 +56,9 @@ export default defineComponent({
                 );
             })
         },
+        /**
+         * Pesquisa os tipos e espécies de Pokémons conforme selecionado pelo o usuário em um select.
+         */
         pesquisar() {
             this.PokemonsFiltrados = this.DetalhesPokemon.filter(pokemon => {
                 const tipoCorrespondente = this.tipoSelecionado === 'todos' || pokemon.types.some((type: any) => type.type.name === this.tipoSelecionado);

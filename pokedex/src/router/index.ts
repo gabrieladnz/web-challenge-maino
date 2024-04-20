@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/HomeView.vue';
+import PokemonSelecionado from '@/pages/PokemonSelecionado.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -10,7 +11,13 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/sobre',
     name: 'sobre',
-    component: () => import(/* webpackChunkName: "about" */ '../views/SobreView.vue')
+    component: () => import( '../views/SobreView.vue')
+  },
+  {
+    path: '/pokemon/:id/:name',
+    name: 'PokemonSelecionado',
+    component: PokemonSelecionado,
+    props: true
   }
 ]
 
