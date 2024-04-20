@@ -7,7 +7,7 @@
     <section class="pokemon-selecionado__painel-principal">
       <div class="pokemon-selecionado__painel-principal__secao-1">
         <!-- Imagem  -->
-        <div class="pokemon-selecionado__painel-principal__secao-1__imagem">
+        <div class="pokemon-selecionado__painel-principal__secao-1__imagem slideInLeft">
           <img v-bind:src="pokemon.foto" alt="Imagem do Pokemon" />
         </div>
         <div class="pokemon-selecionado__painel-principal__secao-1__poderes">

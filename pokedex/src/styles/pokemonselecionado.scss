@@ -111,3 +111,19 @@
     }
   }
 }
+
+// Animações 
+.slideInLeft {
+  animation: slideInLeft 1s both;
+}
+
+@keyframes slideInLeft {
+  0% {
+      transform: translateX(-10%);
+      visibility: visible;
+  }
+
+  100% {
+      transform: translateX(0);
+  }
+}
