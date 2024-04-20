@@ -1,5 +1,5 @@
 <template>
-    <div class="card-pokemon card">
+    <div class="card-pokemon card" @click="navegarPokemonSelecionado">
         <!-- Número  -->
         <span class="card-pokemon__numero slideInDown">#{{ id }}</span>
         <!-- Nome  -->

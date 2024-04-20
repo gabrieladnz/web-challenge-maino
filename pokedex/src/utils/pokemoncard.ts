@@ -59,6 +59,9 @@ export default defineComponent({
               default:
                 return '#c89e6b';
             }
+          },
+          navegarPokemonSelecionado() {
+            this.$router.push({name: 'PokemonSelecionado', params: { id: this.id, name: this.name}});
           }
     }
 });

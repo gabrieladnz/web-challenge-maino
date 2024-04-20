@@ -1,6 +1,6 @@
 <template>
   <div class="pokemon-selecionado">
-
+    <h1>{{ pokemon.name }}</h1>
   </div>
 </template>
 
