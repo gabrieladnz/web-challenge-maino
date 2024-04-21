@@ -19,16 +19,16 @@ export default defineComponent({
   },
   methods: {
     /**
-     * 
-     * @param type 
-     * @returns 
+     * Retorna a cor de fundo correspondente ao tipo de Pokémon fornecido.
+     * @param type O tipo de Pokémon para o qual a cor de fundo será determinada.
+     * @returns A cor de fundo correspondente ao tipo de Pokémon.
      */
-    // Chame a função getBackgroundColor aqui
     getBackgroundColor(type: string) {
       return getBackgroundColor(type);
     },
     /**
-     * 
+     * Navega para a página do Pokémon selecionado em uma nova guia do navegador.
+     * A rota é resolvida usando o router Vue Router com base no ID e nome do Pokémon.
      */
     navegarPokemonSelecionado() {
       const rota = this.$router.resolve({ name: 'PokemonSelecionado', params: { id: this.id, name: this.name } }).href;

@@ -36,7 +36,7 @@ export default defineComponent({
   },
   methods: {
     /**
-     * 
+     * Buscar detalhes do Pokémon selecionado e retornar esses detalhes na página selecionada
      */
     async buscarDetalhesPokemon() {
       try {
@@ -71,10 +71,10 @@ export default defineComponent({
       }
     },
     /**
-     * 
-     * @param pokemonName 
-     * @returns 
-     */
+       * Busca as evoluções do Pokémon especificado.
+       * @param pokemonName O nome do Pokémon para o qual as evoluções serão buscadas.
+       * @returns As evoluções do Pokémon especificado.
+       */
     async buscarEvolucoesPokemon(pokemonName: string) {
       try {
         const apiService = new ApiService();
@@ -85,7 +85,9 @@ export default defineComponent({
         return null;
       }
     },
+    /**
+     * Função que retorne cores dos types.
+     */
     getBackgroundColor
-
   }
 })

@@ -81,7 +81,7 @@ export default defineComponent({
             });
         },
         /**
-         * 
+         * Função para habilitar o carregamento de mais detalhes de Pokémon ao rolar a página.
          */
         async scroll() {
             this.carregando = false;
@@ -96,7 +96,7 @@ export default defineComponent({
             });
         },
         /**
-         * 
+         * Função para carregar mais detalhes de Pokémon.
          */
         async maisDetalhesPokemon() {
             const inicio = (this.paginaAtual - 1) * this.porPagina;

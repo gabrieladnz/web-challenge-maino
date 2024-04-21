@@ -1,12 +1,16 @@
 import axios, { AxiosResponse } from 'axios';
 import { Pokemon } from './ApiInterface';
 
+/**
+ * Classe responsável por realizar requisições à PokeAPI para obter informações sobre Pokémons.
+ */
 class ApiService {
   private apiURL: string = 'https://pokeapi.co/api/v2/';
 
   /**
-   * 
-   * @returns 
+   * Obtém uma lista de Pokémon da API.
+   * @returns Uma Promise que resolve em uma lista de Pokémon.
+   * @throws Um erro se ocorrer um problema durante a requisição.
    */
   public getListaPokemon = async (): Promise<Pokemon[]> => {
     try {
@@ -18,9 +22,10 @@ class ApiService {
   };
 
   /**
-   * 
-   * @param nomePokemon 
-   * @returns 
+   * Obtém os detalhes de um Pokémon específico da API.
+   * @param nomePokemon O nome do Pokémon desejado.
+   * @returns Uma Promise que resolve nos detalhes do Pokémon.
+   * @throws Um erro se ocorrer um problema durante a requisição.
    */
   public getDetalhesPokemon = async (nomePokemon: string): Promise<any> => {
     try {
@@ -32,9 +37,10 @@ class ApiService {
   };
 
   /**
-   * 
-   * @param nomePokemon 
-   * @returns 
+   * Obtém os detalhes de um Pokémon específico da API.
+   * @param nomePokemon O nome do Pokémon desejado.
+   * @returns Uma Promise que resolve nos detalhes do Pokémon.
+   * @throws Um erro se ocorrer um problema durante a requisição.
    */
   public getPokemonEspecie = async (nomePokemon: string): Promise<any> => {
     try {
