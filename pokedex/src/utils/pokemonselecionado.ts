@@ -18,6 +18,7 @@ export default defineComponent({
       pokemon: null as any,
       ListaPokemon: [] as Pokemon[],
       DetalhesPokemon: [] as any[],
+      carregando: true
     }
   },
   async created() {
@@ -35,20 +36,20 @@ export default defineComponent({
   },
   methods: {
     /**
-     * 
+     * Buscar detalhes do Pokémon selecionado e retornar esses detalhes na página selecionada
      */
     async buscarDetalhesPokemon() {
       try {
         const apiService = new ApiService();
         const detalhesPromises = this.ListaPokemon.map(pokemon => apiService.getDetalhesPokemon(pokemon.name));
         const detalhesPokemon = await Promise.all(detalhesPromises);
-        
+
         const pokemonSelecionado = detalhesPokemon.find(pokemon => pokemon.name === this.name);
         console.log(pokemonSelecionado);
         if (pokemonSelecionado) {
           const evolutions = await this.buscarEvolucoesPokemon(pokemonSelecionado.name);
           const caminhoFoto = pokemonSelecionado.sprites.other['official-artwork'].front_default;
-          const types = pokemonSelecionado.types.map((typeData: any )=> typeData.type.name);
+          const types = pokemonSelecionado.types.map((typeData: any) => typeData.type.name);
 
           this.pokemon = {
             name: pokemonSelecionado.name,
@@ -65,12 +66,15 @@ export default defineComponent({
       } catch (error) {
         console.error('Erro ao buscar detalhes dos Pokémon:', error);
       }
+      finally {
+        this.carregando = false;
+      }
     },
     /**
-     * 
-     * @param pokemonName 
-     * @returns 
-     */
+       * Busca as evoluções do Pokémon especificado.
+       * @param pokemonName O nome do Pokémon para o qual as evoluções serão buscadas.
+       * @returns As evoluções do Pokémon especificado.
+       */
     async buscarEvolucoesPokemon(pokemonName: string) {
       try {
         const apiService = new ApiService();
@@ -81,7 +85,9 @@ export default defineComponent({
         return null;
       }
     },
+    /**
+     * Função que retorne cores dos types.
+     */
     getBackgroundColor
-
   }
 })

@@ -48,7 +48,7 @@
             </div>
           </aside>
           <!-- Cards  -->
-          <main class="home__section__cards" v-infinite-scroll="handleScroll">
+          <main class="home__section__cards">
             <div v-for="(pokemon, index) in PokemonsFiltrados.length > 0 ? PokemonsFiltrados : DetalhesPokemon"
               :key="index">
               <PokemonCard :name="pokemon.name" :url="pokemon.forms[0].url" :id="pokemon.id" :types="pokemon.types"
@@ -57,8 +57,10 @@
           </main>
         </div>
       </section>
-      <!-- Footer  -->
-      <Footer></Footer>
+      <!-- Loading  -->
+      <div v-if="carregando" class="loading-icon">
+        <div class="custom-loader"></div>
+    </div>
     </div>
   </div>
 </template>

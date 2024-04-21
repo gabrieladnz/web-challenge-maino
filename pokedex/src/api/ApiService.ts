@@ -1,16 +1,20 @@
 import axios, { AxiosResponse } from 'axios';
 import { Pokemon } from './ApiInterface';
 
+/**
+ * Classe responsável por realizar requisições à PokeAPI para obter informações sobre Pokémons.
+ */
 class ApiService {
   private apiURL: string = 'https://pokeapi.co/api/v2/';
 
   /**
-   * 
-   * @returns 
+   * Obtém uma lista de Pokémon da API.
+   * @returns Uma Promise que resolve em uma lista de Pokémon.
+   * @throws Um erro se ocorrer um problema durante a requisição.
    */
   public getListaPokemon = async (): Promise<Pokemon[]> => {
     try {
-      const response: AxiosResponse<{ results: Pokemon[] }> = await axios.get(`${this.apiURL}pokemon?limit=100`);
+      const response: AxiosResponse<{ results: Pokemon[] }> = await axios.get(`${this.apiURL}pokemon?limit=1000`);
       return response.data.results;
     } catch (error) {
       throw new Error(`Erro ao buscar lista de Pokémon: ${error}`);
@@ -18,9 +22,10 @@ class ApiService {
   };
 
   /**
-   * 
-   * @param nomePokemon 
-   * @returns 
+   * Obtém os detalhes de um Pokémon específico da API.
+   * @param nomePokemon O nome do Pokémon desejado.
+   * @returns Uma Promise que resolve nos detalhes do Pokémon.
+   * @throws Um erro se ocorrer um problema durante a requisição.
    */
   public getDetalhesPokemon = async (nomePokemon: string): Promise<any> => {
     try {
@@ -32,9 +37,10 @@ class ApiService {
   };
 
   /**
-   * 
-   * @param nomePokemon 
-   * @returns 
+   * Obtém os detalhes de um Pokémon específico da API.
+   * @param nomePokemon O nome do Pokémon desejado.
+   * @returns Uma Promise que resolve nos detalhes do Pokémon.
+   * @throws Um erro se ocorrer um problema durante a requisição.
    */
   public getPokemonEspecie = async (nomePokemon: string): Promise<any> => {
     try {
