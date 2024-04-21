@@ -20,7 +20,7 @@ export default defineComponent({
             termoProcurado: '',
             tipoSelecionado: '',
             especieSelecionada: '',
-            carregando: false,
+            carregando: true,
             paginaAtual: 1,
             totalPaginas: 0,
             porPagina: 16,
@@ -84,6 +84,7 @@ export default defineComponent({
          * 
          */
         async scroll() {
+            this.carregando = false;
             window.addEventListener('scroll', async () => {
                 console.log('Scrolling...');
                 if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 && !this.carregando && this.paginaAtual < this.totalPaginas) {

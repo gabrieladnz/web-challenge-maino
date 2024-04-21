@@ -18,6 +18,7 @@ export default defineComponent({
       pokemon: null as any,
       ListaPokemon: [] as Pokemon[],
       DetalhesPokemon: [] as any[],
+      carregando: true
     }
   },
   async created() {
@@ -42,13 +43,13 @@ export default defineComponent({
         const apiService = new ApiService();
         const detalhesPromises = this.ListaPokemon.map(pokemon => apiService.getDetalhesPokemon(pokemon.name));
         const detalhesPokemon = await Promise.all(detalhesPromises);
-        
+
         const pokemonSelecionado = detalhesPokemon.find(pokemon => pokemon.name === this.name);
         console.log(pokemonSelecionado);
         if (pokemonSelecionado) {
           const evolutions = await this.buscarEvolucoesPokemon(pokemonSelecionado.name);
           const caminhoFoto = pokemonSelecionado.sprites.other['official-artwork'].front_default;
-          const types = pokemonSelecionado.types.map((typeData: any )=> typeData.type.name);
+          const types = pokemonSelecionado.types.map((typeData: any) => typeData.type.name);
 
           this.pokemon = {
             name: pokemonSelecionado.name,
@@ -64,6 +65,9 @@ export default defineComponent({
         }
       } catch (error) {
         console.error('Erro ao buscar detalhes dos Pokémon:', error);
+      }
+      finally {
+        this.carregando = false;
       }
     },
     /**

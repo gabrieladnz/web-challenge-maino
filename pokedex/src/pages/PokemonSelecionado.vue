@@ -4,7 +4,12 @@
     <div>
       <Navbar></Navbar>
     </div>
-    <section class="pokemon-selecionado__painel-principal">
+    <!-- Loading  -->
+    <div v-if="carregando" class="loading-icon">
+      <div class="custom-loader"></div>
+    </div>
+    <section class="pokemon-selecionado__painel-principal" v-else>
+      <!-- Loading  -->
       <div class="pokemon-selecionado__painel-principal__secao-1">
         <!-- Imagem  -->
         <div class="pokemon-selecionado__painel-principal__secao-1__imagem slideInLeft">

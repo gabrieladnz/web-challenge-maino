@@ -57,8 +57,10 @@
           </main>
         </div>
       </section>
-      <!-- Footer  -->
-      <Footer></Footer>
+      <!-- Loading  -->
+      <div v-if="carregando" class="loading-icon">
+        <div class="custom-loader"></div>
+    </div>
     </div>
   </div>
 </template>

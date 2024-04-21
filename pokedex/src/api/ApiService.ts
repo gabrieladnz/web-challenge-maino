@@ -10,7 +10,7 @@ class ApiService {
    */
   public getListaPokemon = async (): Promise<Pokemon[]> => {
     try {
-      const response: AxiosResponse<{ results: Pokemon[] }> = await axios.get(`${this.apiURL}pokemon?limit=2000`);
+      const response: AxiosResponse<{ results: Pokemon[] }> = await axios.get(`${this.apiURL}pokemon?limit=1000`);
       return response.data.results;
     } catch (error) {
       throw new Error(`Erro ao buscar lista de Pokémon: ${error}`);
