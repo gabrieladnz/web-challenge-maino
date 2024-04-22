@@ -11,7 +11,11 @@ Este é um projeto de Pokedex desenvolvido usando Vue.js, HTML, SCSS, Bootstrap 
 
 ---
 
-## Instruções de Configuração
+## Capturas de tela
+![image](https://github.com/gabrieladnz/web-challenge-maino/assets/100526271/0d6e4462-dee0-40fb-8efc-e3a11cf504fa)
+
+---
+## Instruções de configuração
 
 ### Pré-requisitos
 
