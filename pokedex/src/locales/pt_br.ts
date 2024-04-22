@@ -6,11 +6,6 @@ export const pt_br = {
         item1: 'Início',
         item2: 'Sobre'
     },
-    
-    footer: {
-
-    },
-
     filtro: {
         tipo: 'Tipo',
         especie: 'Espécies',

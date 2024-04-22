@@ -1,6 +1,5 @@
 import { defineComponent } from 'vue';
 import Navbar from '../components/Navbar.vue';
-import Footer from '../components/Footer.vue';
 import PokemonCard from '@/components/PokemonCard.vue';
 import ApiService from '@/api/ApiService';
 import { Pokemon } from '@/api/ApiInterface';
@@ -9,7 +8,6 @@ export default defineComponent({
     name: "Home",
     components: {
         'Navbar': Navbar,
-        'Footer': Footer,
         'PokemonCard': PokemonCard,
     },
     data() {

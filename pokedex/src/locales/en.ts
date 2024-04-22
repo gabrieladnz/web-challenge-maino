@@ -6,9 +6,6 @@ export const en = {
         item1: 'Start',
         item2: 'About'
     },
-    footer: {
-
-    },
     filtro: {
         tipo: 'Type',
         especie: 'Species',
