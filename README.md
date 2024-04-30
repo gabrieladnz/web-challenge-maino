@@ -7,7 +7,7 @@
 
 ## Descrição
 
-Este é um projeto de Pokedex desenvolvido usando Vue.js, HTML, SCSS, Bootstrap e uma API pública para fornecer informações sobre Pokémon. O projeto em si consiste em um desafio de código proposto pela empresa Mainô!
+Este é um projeto de Pokedex desenvolvido usando Vue.js, HTML, SCSS, Bootstrap e uma API pública para fornecer informações sobre Pokémon.
 
 ---
 
